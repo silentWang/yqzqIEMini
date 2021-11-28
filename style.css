@@ -302,3 +302,91 @@ img:hover {
     border-radius: 6px;
     background: #fff;
 }
+.mini_three_div {
+    float: left;
+}
+.mini_three_div a {
+    font-size: 17px;
+    font-weight: bold;
+}
+.mini_content_image {
+    display: block;
+    overflow: hidden;
+    padding-top: 8px;
+}
+.mini_content_image_p {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 4px;
+    text-align: left;
+}
+.mini_content_image a {
+    display: block;
+    width: 130px;
+    height: 85px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    margin: 0px 10px 5px 0px;
+    float: left;
+}
+.mini_content_image img {
+    width: 130px;
+    height: 85px;
+    transition: all 0.6s;
+}
+.mini_content_image img:hover {
+    transform: scale(1.2);
+}
+.mini_content_more {
+    width: 130px;
+    height: 50px;
+    background: #eeeeee;
+    cursor: pointer;
+    color: #333;
+    float: left;
+    text-align: center;
+    margin: 0px 10px 5px 0px;
+    padding-top: 35px;
+    font-weight: normal;
+}
+.mini_content_more span {
+    padding-top: 30px;
+}
+.mini_content_one_image {
+    width: 150px;
+    float: left;
+}
+.mini_content_one_image a {
+    display: block;
+    width: 150px;
+    height: 85px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    margin: 0px 5px 5px 0px;
+    float: left;
+}
+.mini_content_one_image img {
+    width: 150px;
+    height: 85px;
+    transition: all 0.6s;
+}
+.mini_content_one_image img:hover {
+    transform: scale(1.2);
+}
+.mini_content_one_image_title {
+    width: 400px;
+    padding: 3px 0px 4px 0px;
+    float: right;
+}
+.mini_content_one_image_title a {
+    height: 64px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+}
+.mini_content_one_image_title span {
+    display: block;
+    font-size: 12px;
+    color: #bbb;
+    text-align: left;
+}

@@ -18,11 +18,15 @@
       s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)
       })(window,document,"script","_qha",434728,false);
     </script>
+    <script type="text/javascript" src="./js/Config.js"></script>
+    <script type="text/javascript" src="./js/DomUtils.js"></script>
+    <script type="text/javascript" src="./js/DataCenter.js"></script>
+    <script type="text/javascript" src="./js/MiniRightControl.js"></script>
   </head>
   <body>
     <div id="app">
       <div class="mini_main">
-        <div v-show="dialogFlag" class="mini_dialog_main">
+        <!-- <div v-show="dialogFlag" class="mini_dialog_main">
             <div class="mini_dialog_news">
                 <div class="mini_dialog_close" @click="clickClose()" @click.stop>ⓧ</div>
                 <div class="mini_dialog_news_block" v-for="(item,index) in dialogNewsList" @click="gotoNews(item,index)" :key="index">
@@ -36,37 +40,17 @@
                 </div>
                 <MiniAdvItem v-if="showAdvFlag2" class="mini_adver_dialog_class_style" :actionItem="actionItem1"></MiniAdvItem>
             </div>
-        </div>
+        </div> -->
         <div class="mini_main_title">
             <ul class="mini_main_title_ul">
             </ul>
         </div>
         <div class="mini_right">
             <ul class="mini_right_list">
-                <li v-for="(item,index) in rightList.slice(0,3)" :key="index">
-                    <div v-if="item.type == 2">
-                        <div v-if="index == 0">
-                            <MiniAdvItem :actionItem="actionItemCC1" type="kitchen" class="mini_adver_kicthen_class_style"></MiniAdvItem>
-                        </div>
-                        <div v-else>
-                            <MiniAdvItem :actionItem="actionItemCC2" type="kitchen" class="mini_adver_kicthen_class_style"></MiniAdvItem>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <NewsSlider v-on:gotoNews="gotoNews" :nsId="index" nWidth="200" nHeight="185" v-bind:newsList="getSlideNewsList(item.data)"></NewsSlider>
-                        <MiniAdvItem v-if="showAdvFlag3" :actionItem="actionItem2" class="mini_adver_flag_class_style"></MiniAdvItem>
-                    </div>
-                </li>
             </ul>
         </div>
         <div class="mini_middle" @scroll="scrollHandler">
             <div class="mini_content">
-                <div class="mini_content_item" v-for="(item,index) in newsList" :key="getNextKey(item,index)">
-                    <MiniAdvItem v-if="item.type == 2" class="mini_adver_class_style" :actionItem="actionItemList"></MiniAdvItem>
-                    <MiniNewsItem v-else v-on:gotoNews="gotoNews" :newsInfo="item" :cateName="getCateName()">
-                        <MiniAdvItem v-if="showAdvFlag1" class="mini_adver_flag_class_style" :actionItem="actionItem3"></MiniAdvItem>
-                    </MiniNewsItem>
-                </div>
             </div>
         </div>
         <div v-show="moreFlag" class="mini_bottom_more" @click="gotoNextPage()">更多未读资讯<span>››</span></div>
@@ -85,5 +69,6 @@
       <!-- 人人笔记：150 -->
       <!-- <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1280623594&web_id=1280623594"></script> -->
     </div>
+    <div id="common_other_container" style="width: 0px;height:0px;overflow: hidden;display: none;"></div>
   </body>
 </html>
