@@ -1,5 +1,29 @@
-window["DataCenter"] = (function(){
-    var clsObj = {};
+DataCenter = (function(window,document){
+    var clsObj = window.NewClass("DataCenter");
+    clsObj.Http = {
+        get:function(url,callback){
+            var xhr = null;
+            if(window.XMLHttpRequest){
+                xhr = new window.XMLHttpRequest();
+            }
+            else if(window.ActiveXObject){
+                xhr = new window.ActiveXObject("Microsoft.XMLHTTP");
+            }
+            if(!xhr){
+                alert("浏览器不支持ajax")
+                return;
+            }
+            xhr.open("GET",url);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    if(callback){
+                        callback(xhr.responseText)
+                    }
+                }
+            }
+            xhr.send();
+        }
+    }
     clsObj.gotoNews = function(item){
         var idx = item.id;
         var mode = clsObj.getJumpToPath();
@@ -260,7 +284,7 @@ window["DataCenter"] = (function(){
         if(!cateid) cateid = 1;
         if(page == 1){
             var ext = clsObj.getJsonUrl("mini",cateid);
-            Http.get(ext,function(res){
+            this.Http.get(ext,function(res){
                 var data = JSON.parse(res)
                 clsObj.upToAdverByIframe(data.main_list);
                 if(callback){
@@ -280,4 +304,4 @@ window["DataCenter"] = (function(){
         // });
     }
     return clsObj;
-})();
+})(window,document);

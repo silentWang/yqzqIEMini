@@ -1,5 +1,5 @@
-window["MiniRightControl"] = (function(){
-    var clsObj = {};
+window["MiniRightControl"] = (function(window,document){
+    var clsObj = window.NewClass("MiniMainControl");
     clsObj.init = function(data){
         clsObj.data = data;
         clsObj.initList();
@@ -30,7 +30,7 @@ window["MiniRightControl"] = (function(){
         sli.setAttribute("class","ns_main_li")
         var img = document.createElement("IMG")
         img.setAttribute("class","ns_slide_image")
-        img.src = data ? data.pic : "";
+        img.src = data ? data.pics[0] : "";
         img.onclick = function(){
             DataCenter.gotoNews(data)
         }
@@ -52,4 +52,4 @@ window["MiniRightControl"] = (function(){
 
     }
     return clsObj;
-})();
+})(window,document);
