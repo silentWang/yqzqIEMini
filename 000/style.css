@@ -137,7 +137,7 @@ img:hover {
 .mini_navLink {
     height: 24px;
     display: block;
-    padding-top: 4px;
+    padding-top: 10px;
     color: #000;
     font-size: 14px;
     text-decoration: none;
@@ -150,7 +150,7 @@ img:hover {
 .mini_navLink_selected {
     height: 24px;
     display: block;
-    padding-top: 4px;
+    padding-top: 10px;
     font-size: 14px;
     text-decoration: none;
     color:#fff;

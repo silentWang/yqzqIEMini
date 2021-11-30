@@ -31,19 +31,24 @@ window["MiniMainControl"] = (function(window,document){
     clsObj.setList = function(){
         this.DomUtils.removeAll(".mini_content");
         var mainlist = this.data.main_list;
+        var fragment = document.createDocumentFragment();
         for(var i = 0;i < mainlist.length;i++){
             var info = mainlist[i];
             if(info.type == 2){
-                
+                var div = document.createElement("DIV");
+                var adv = this.DataCenter.getDefaultBDAdv();
+                div.appendChild(adv);
+                fragment.appendChild(div);
             }
             else{
                 var div = document.createElement("DIV")
                 div.setAttribute("class","mini_content_item")
                 var itemdiv = this.getDivByData(info);
                 div.appendChild(itemdiv);
-                this.DomUtils.addChild(".mini_content",div)
+                fragment.appendChild(div);
             }
         }
+        this.DomUtils.addChild(".mini_content",fragment)
     }
 
     clsObj.gotoCategry = function(cateId){
@@ -104,7 +109,7 @@ window["MiniMainControl"] = (function(window,document){
             sdiv.innerHTML = shtml;
             var span = document.createElement("SPAN");
             span.setAttribute("class","mini_content_image_p")
-            span.innerText = data.cateName + data.from;
+            span.innerText = data.from;
             sDiv.appendChild(a);
             sDiv.appendChild(sdiv);
             sDiv.appendChild(span);

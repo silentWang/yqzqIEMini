@@ -75,45 +75,16 @@ DataCenter = (function(window,document){
     //     clsObj.index++;
     //     return clsObj.index;
     // }
-    // /**加载广告 360一次最多4条 */
-    // clsObj.addAdsByClassName = function(classname){
-    //     if(!classname) return
-    //     let elements = document.getElementsByClassName(classname);
-    //     if(!elements || elements.length == 0) return
-    //     let len = elements.length;
-    //     for(let i = 0;i < len;i++){
-    //         let element = elements[i];
-    //         if(!element) continue;
-    //         clsObj.changeAndExecuteJS(element);
-    //     }
-    // }
-    // /**默认打底广告 */
-    // clsObj.getDefaultBDAdv = function(){
-    //     let advcode = `<div class="_fnnhq1kgkkb"></div>
-    //     <script type="text/javascript">
-    //         (window.slotbydup = window.slotbydup || []).push({
-    //             id: "u6606892",
-    //             container: "_fnnhq1kgkkb",
-    //             async: true
-    //         });
-    //     </script>`;
-    //     return advcode;
-    // }
     
-    // /**change function */
-    // clsObj.changeAndExecuteJS = function(element,loaded = true){
-    //     if(element.isAdLoaded) return;
-    //     if(element.style.display == "none") return;
-    //     let sScript = element.getElementsByTagName("script")[0];
-    //     if(!sScript) return;
-    //     element.removeChild(sScript);
-    //     let nScript = document.createElement("script");
-    //     nScript.type = "text/javascript";
-    //     nScript.innerHTML = sScript.innerHTML;
-    //     element.appendChild(nScript);
-    //     element.isAdLoaded = loaded;
-    // }
-
+    /**默认打底广告 */
+    clsObj.getDefaultBDAdv = function(advId){
+        var advId = "_1fwwsc8pcfn"
+        var div = document.createElement("DIV")
+        div.setAttribute("class",advId);
+        div.className = advId;
+        (window.slotbydup = window.slotbydup || []).push({id: "u6683350",container: advId,async: true});
+        return div;
+    }
     // /**广告iframe上报 */
     clsObj.upToAdverByIframe = function(advers){
         if(!advers || advers.length == 0) return;

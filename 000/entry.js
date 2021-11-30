@@ -5,7 +5,7 @@ if(!window.ActiveXObject){
     var appModule = {}
     appModule.process = window.process;
     appModule.DomUtils = window.DomUtils;
-    appModule.DataCenter = window.DataCenter;
+    appModule.DataCenter = DataCenter.ctor(appModule);
     var mainControl = MiniMainControl.ctor(appModule);
     var rightControl = MiniRightControl.ctor(appModule);
     function Main(data){

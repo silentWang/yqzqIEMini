@@ -102,6 +102,24 @@ DomUtils = (function(){
                 return eles;
             }
         },
+        removeChild:function(parent,child){
+            if(!parent || !child) return
+            var children = parent.children;
+            if(!children || children.length == 0) return;
+            // if(parent.removeChild){
+            //     parent.removeChild(child)
+            //     return;
+            // }
+            var index = -1;
+            for(var i = 0;i < children.length;i++){
+                if(child == children[i]){
+                    index = i;
+                    break;
+                }
+            }
+            if(index < 0) return;
+            parent.removeNode(child);
+        },
         removeAll:function(elementId){
             var ele = this.get(elementId)
             if(ele){
